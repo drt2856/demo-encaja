@@ -1,0 +1,103 @@
+* {
+    font-family: sans-serif;
+    font-size: x-large;
+}
+
+
+.redounder {
+    border-radius: 100%;
+    padding: 0 10px;
+    font-size: xx-large;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+.my-modal {
+    background-color: rgba(9, 17, 90, 0.527);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.my-modal-body {
+    background-color: azure;
+    width: 80%;
+    max-width: 500px;
+   
+    padding: 20px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.my-modal-body>div {
+    margin: 10px auto;
+}
+
+.goal {
+    border-bottom: solid 1px rgb(0, 0, 0);
+}
+
+.min-container {
+    max-width: 500px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+
+.btn-redounder-left {
+    width: 10%;
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 100%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: 0;
+    padding: 5px;
+   
+}
+.btn-in-the-middle{
+    width: 80%;
+    border-radius: 0;
+    margin: 0;
+    padding: 5px;
+}
+.btn-redounder-rihgt {
+    width: 10%;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: 0;
+    padding: 5px;
+}
+
+.over-base {
+    background-color: azure;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 500px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+input{
+    max-width: 50px;
+}
