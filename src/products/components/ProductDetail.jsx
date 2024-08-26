@@ -35,11 +35,11 @@ export function ProductDetail() {
                 </div>
                 <div >
                     <label htmlFor="costPrice" className="col-12">Precio de compra</label>
-                    <input style={{backgroundColor:product.costPrice>=product.salePrice?"red":"white"}} type="number" id="costPrice" className="col-12" value={product.costPrice} onChange={handleChange} />
+                    <input style={{backgroundColor:product.costPrice>=product.salePrice?"red":"#fdfd96"}} type="number" id="costPrice" className="col-12" value={product.costPrice} onChange={handleChange} />
                 </div>
                 <div>
                     <label htmlFor="salePrice" className="col-12">Precio de venta</label>
-                    <input style={{backgroundColor:product.costPrice>=product.salePrice?"red":"white"}} type="number" id="salePrice" className="col-12" value={product.salePrice} onChange={handleChange} />
+                    <input style={{backgroundColor:product.costPrice>=product.salePrice?"red":"#fdfd96"}} type="number" id="salePrice" className="col-12" value={product.salePrice} onChange={handleChange} />
                 </div>
                 <div>
                     <label htmlFor="firstCount" className="col-12">Cuantos hay en inventario</label>

@@ -7,10 +7,10 @@
 .redounder {
     border-radius: 100%;
     padding: 0 10px;
-    font-size: xx-large;
+    font-size: 30px;
     position: fixed;
-    right: 20px;
-    bottom: 20px;
+    right: 30px;
+    bottom: 30px;
 }
 
 .my-modal {
@@ -45,9 +45,7 @@
     margin: 10px auto;
 }
 
-.goal {
-    border-bottom: solid 1px rgb(0, 0, 0);
-}
+
 
 .min-container {
     max-width: 500px;
@@ -56,6 +54,8 @@
 body {
     display: flex;
     flex-direction: column;
+    
+    background: #fdfd96;
     /* align-items: center; */
 }
 
@@ -98,6 +98,46 @@ body {
     flex-direction: column;
 }
 
+.balances-input{
+    max-width: 100px;
+    border-color: rgba(0, 0, 0, 0);
+}
+
+
+.notebook-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background: #fdfd96; /* Color de fondo similar a una libreta */
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace; /* Fuente tipo máquina de escribir */
+}
+
+.notebook-list li {
+    padding: 5px 0;
+    border-bottom: 1px dashed #ccc; /* Línea punteada entre elementos */
+}
+
+.notebook-list li:last-child {
+    border-bottom: none; /* Sin línea en el último elemento */
+}
+
+.my-table{
+    background: #fdfd96
+}
+.my-table td,.my-table th{
+    padding: .5rem .5rem;
+}
+.my-table tr{
+    border-bottom: 1px dashed #ccc;
+}
+.my-table thead{
+    background: #ffff6e
+}
+
 input{
-    max-width: 50px;
+    border: #00000000;
+    background: #fdfd96;
+    border: 1px dashed #ccc;
 }

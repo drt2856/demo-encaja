@@ -5,19 +5,25 @@ import Product from "./Product"
 export function Products() {
 
     const { products } = useProduct()
-    
+
     return (
         <div>
-            <div>
-                <NavLink to={"/demo-encaja/product"}>Productos</NavLink>
-                <NavLink to={"/demo-encaja/product/balance/"}>Cierre de caja</NavLink>
-            </div>
-            <div>
-                {products.map(product => (
-                    product.enabled===true&&<Product key={product.id} prevProduct={product} />
-                ))}
-            </div>
+            <div className="navegation">
+                <ul>
+                    <li>
+                        <NavLink to={"/demo-encaja/product"}>Productos</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to={"/demo-encaja/product/balance/"}>Cierre de caja</NavLink>
+                    </li>
+                </ul>
 
+            </div>
+            <ul class="notebook-list">
+                {products.map(product => (
+                    product.enabled === true && <li><Product key={product.id} prevProduct={product} /></li>
+                ))}
+            </ul>
 
             <NavLink
                 to={"/demo-encaja/product/create/"}

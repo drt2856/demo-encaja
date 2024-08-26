@@ -16,7 +16,7 @@ function App() {
     <ProductProvider>
         <Router>
           <Routes>
-            <Route path="/demo-encaja/" element={<div>Esto es lo que hay</div>} />
+            <Route path="/demo-encaja/" element={<Products />} />
             <Route path="/demo-encaja/product/" element={<Products />} />
             <Route path="/demo-encaja/product/create/" element={<CreateProduct />} />
             <Route path="/demo-encaja/product/:productId/" element={<ProductDetail />} />

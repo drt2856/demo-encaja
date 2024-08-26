@@ -20,7 +20,7 @@ export default function Product({ prevProduct }) {
     };
 
     return (<>
-        <div className="goal row"  >
+        <div className="row"  >
             
             <div className="col-11" onClick={() => navigate("/demo-encaja/product/"+product.id)}>
                 <h3>{product?.name}.....${product?.salePrice}</h3>

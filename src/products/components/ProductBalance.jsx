@@ -43,7 +43,7 @@ export function ProductBalance() {
     return (
         <div>
             <h1>Cierre de ventas</h1>
-            <table className="balance">
+            <table className="my-table">
                 <caption>Cierre de ventas
                     Obtuviste ${statics.ventas} en ventas y + ${statics.ganancias} en ganancia
 
@@ -84,42 +84,42 @@ export function ProductBalance() {
                             {/* si el first es menor que el secodn poner una clase que marqu error */}
                             <td >
                                 <input
-                                    style={{ backgroundColor: balance.firstCount < balance.secondCount ? "red" : "white" }}
+                                    style={{ backgroundColor: balance.firstCount < balance.secondCount ? "red" : "#fdfd96" }}
                                     type="number"
                                     id="firstCount"
-                                    className="col-12"
+                                    className="balances-input"
                                     value={balance.firstCount}
                                     onChange={(event) => handleChange(event, balance)}
                                 />
                             </td>
                             <td>
                                 <input
-                                    style={{ backgroundColor: balance.firstCount < balance.secondCount ? "red" : "white" }}
+                                    style={{ backgroundColor: balance.firstCount < balance.secondCount ? "red" : "#fdfd96" }}
                                     type="number"
                                     id="secondCount"
-                                    className="col-12"
+                                    className="balances-input"
                                     value={balance.secondCount}
                                     onChange={(event) => handleChange(event, balance)}
                                 />
                             </td>
-                            <td>{balance.firstCount - balance.secondCount}</td>
+                            <td >{balance.firstCount - balance.secondCount}</td>
                             <td>{(balance.firstCount - balance.secondCount) * balance.salePrice}</td>
                             <td>{(balance.firstCount - balance.secondCount) * (balance.salePrice - balance.costPrice)}</td>
                             <td >
                                 <input
-                                    style={{ backgroundColor: balance.costPrice >= balance.salePrice ? "red" : "white" }}
+                                    style={{ backgroundColor: balance.costPrice >= balance.salePrice ? "red" : "#fdfd96" }}
                                     type="number"
                                     id="costPrice"
-                                    className="col-12"
+                                    className="balances-input"
                                     value={balance.costPrice} onChange={(event) => handleChange(event, balance)}
                                 />
                             </td>
                             <td>
                                 <input
-                                    style={{ backgroundColor: balance.costPrice >= balance.salePrice ? "red" : "white" }}
+                                    style={{ backgroundColor: balance.costPrice >= balance.salePrice ? "red" : "#fdfd96" }}
                                     type="number"
                                     id="salePrice"
-                                    className="col-12"
+                                    className="balances-input"
                                     value={balance.salePrice}
                                     onChange={(event) => handleChange(event, balance)}
                                 />
