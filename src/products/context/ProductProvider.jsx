@@ -76,6 +76,7 @@ export function ProductProvider({ children }) {
                 editProduct,
                 deleteProduct,
                 deletCompletedProducts,
+                setProducts
             }}
         >
             

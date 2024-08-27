@@ -8,17 +8,19 @@ export function Products() {
 
     return (
         <div>
-            <div className="navegation">
-                <ul>
+            
+            <ul className="navegation">
                     <li>
                         <NavLink to={"/demo-encaja/product"}>Productos</NavLink>
                     </li>
                     <li>
                         <NavLink to={"/demo-encaja/product/balance/"}>Cierre de caja</NavLink>
                     </li>
+                    <li>
+                        <NavLink to={"/demo-encaja/historical_balances"}>Historial de cierres de caja</NavLink>
+                    </li>
                 </ul>
 
-            </div>
             <ul class="notebook-list">
                 {products.map(product => (
                     product.enabled === true && <li><Product key={product.id} prevProduct={product} /></li>

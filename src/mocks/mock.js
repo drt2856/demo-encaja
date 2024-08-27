@@ -21,6 +21,15 @@ export const mockProducts = [
     }
 ]
 
+export const mockBalances = [
+    {
+        id: "1",
+        cashier: "francisco",
+        date:"2024-2-9",
+        notes: "no hay nada que decir"
+    }
+]
+
 
 
 

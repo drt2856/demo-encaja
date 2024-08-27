@@ -1,20 +1,29 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { useProduct } from "../hooks/useProduct";
+import { useProduct } from "../../products/hooks/useProduct";
+import { NavLink } from "react-router-dom";
+import { CreateBalance } from "./CreateBalance";
+import { useGain } from "../../hooks/useShowGain";
 
 export function ProductBalance() {
     const { products } = useProduct()
+    const { seeShow, checkShowGain } = useGain();
+
     const initialState = products.map(product => ({
         ...product,
-        secondCount: product.firstCount
+        secondCount: product.firstCount,
+        productId: product.id
     }))
 
     const [balances, setBalances] = useState(initialState)
+    const [error, setError] = useState("")
+    const [showModal, setShowModal] = useState("none")
 
     const [statics, setStatics] = useState({
         ventas: 0,
         ganancias: 0,
     })
+
 
     useEffect(() => {
         const sta = { ventas: 0, ganancias: 0 }
@@ -22,8 +31,21 @@ export function ProductBalance() {
             const aux = balances[index]
             sta.ventas = sta.ventas + ((aux.firstCount - aux.secondCount) * aux.salePrice)
             sta.ganancias = sta.ganancias + ((aux.firstCount - aux.secondCount) * (aux.salePrice - aux.costPrice))
+
+            if (Number(aux.firstCount) < Number(aux.secondCount)) {
+                setError("Hay un error: usten no puede tener más " + aux.name + " al inicio del dia que en el cierre")
+            } else {
+                if (Number(aux.costPrice) >= Number(aux.salePrice)) {
+                    setError("Hay un error: el producto" + aux.name + " tiene un precio de costo superior al de venta")
+                } else {
+                    setError("")
+                }
+            }
+
         }
         setStatics(sta)
+
+
 
     }, [balances])
 
@@ -42,11 +64,21 @@ export function ProductBalance() {
 
     return (
         <div>
-            <h1>Cierre de ventas</h1>
+            <ul className="navegation">
+                <li>
+                    <NavLink to={"/demo-encaja/product"}>Productos</NavLink>
+                </li>
+                <li>
+                    <NavLink to={"/demo-encaja/product/balance/"}>Cierre de caja</NavLink>
+                </li>
+                <li>
+                    <NavLink to={"/demo-encaja/historical_balances"}>Historial de cierres de caja</NavLink>
+                </li>
+            </ul>
             <table className="my-table">
                 <caption>Cierre de ventas
-                    Obtuviste ${statics.ventas} en ventas y + ${statics.ganancias} en ganancia
-
+                    Obtuviste ${statics.ventas} en ventas {seeShow(" y $"+statics.ganancias+" en ganancia")}
+                    <span className="bg-danger">{error === "" && error}</span>
                 </caption>
                 <thead>
                     <tr>
@@ -62,15 +94,20 @@ export function ProductBalance() {
                         <th>
                             Se vendieron
                         </th>
+
                         <th>
                             En dinero
                         </th>
-                        <th>
-                            Ganancia
-                        </th>
-                        <th>
-                            Precio de compra
-                        </th>
+                        {seeShow(<>
+                            <th>
+                                Ganancia
+                            </th>
+                            <th>
+                                Precio de compra
+                            </th>
+                        </>)}
+
+
                         <th>
                             Precio de venta
                         </th>
@@ -84,7 +121,7 @@ export function ProductBalance() {
                             {/* si el first es menor que el secodn poner una clase que marqu error */}
                             <td >
                                 <input
-                                    style={{ backgroundColor: balance.firstCount < balance.secondCount ? "red" : "#fdfd96" }}
+                                    style={{ backgroundColor: Number(balance.firstCount) < Number(balance.secondCount) ? "red" : "#fdfd96" }}
                                     type="number"
                                     id="firstCount"
                                     className="balances-input"
@@ -94,7 +131,7 @@ export function ProductBalance() {
                             </td>
                             <td>
                                 <input
-                                    style={{ backgroundColor: balance.firstCount < balance.secondCount ? "red" : "#fdfd96" }}
+                                    style={{ backgroundColor: Number(balance.firstCount) < Number(balance.secondCount) ? "red" : "#fdfd96" }}
                                     type="number"
                                     id="secondCount"
                                     className="balances-input"
@@ -104,19 +141,24 @@ export function ProductBalance() {
                             </td>
                             <td >{balance.firstCount - balance.secondCount}</td>
                             <td>{(balance.firstCount - balance.secondCount) * balance.salePrice}</td>
-                            <td>{(balance.firstCount - balance.secondCount) * (balance.salePrice - balance.costPrice)}</td>
-                            <td >
-                                <input
-                                    style={{ backgroundColor: balance.costPrice >= balance.salePrice ? "red" : "#fdfd96" }}
-                                    type="number"
-                                    id="costPrice"
-                                    className="balances-input"
-                                    value={balance.costPrice} onChange={(event) => handleChange(event, balance)}
-                                />
-                            </td>
+                            {seeShow(
+                                <>
+                                    <td>{(balance.firstCount - balance.secondCount) * (balance.salePrice - balance.costPrice)}</td>
+                                    <td >
+                                        <input
+                                            style={{ backgroundColor: Number(balance.costPrice) >= Number(balance.salePrice) ? "red" : "#fdfd96" }}
+                                            type="number"
+                                            id="costPrice"
+                                            className="balances-input"
+                                            value={balance.costPrice} onChange={(event) => handleChange(event, balance)}
+                                        />
+                                    </td>
+                                </>
+                            )}
+
                             <td>
                                 <input
-                                    style={{ backgroundColor: balance.costPrice >= balance.salePrice ? "red" : "#fdfd96" }}
+                                    style={{ backgroundColor: Number(balance.costPrice) >= Number(balance.salePrice) ? "red" : "#fdfd96" }}
                                     type="number"
                                     id="salePrice"
                                     className="balances-input"
@@ -129,9 +171,17 @@ export function ProductBalance() {
 
                 </tbody>
                 <tfoot>
-                    <td colSpan={4}>Aquí voy a poner los botones</td>
+                    <td colSpan={4}>
+                    {checkShowGain}
+                        <button
+                            onClick={() => setShowModal("create")}
+                            className="btn btn-primary"
+                        >Guardar cierre</button>
+                    </td>
                 </tfoot>
             </table>
+
+            {showModal === "create" && <CreateBalance balances={balances} setShowModal={setShowModal} />}
         </div>
     )
 }

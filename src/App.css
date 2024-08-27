@@ -30,15 +30,13 @@
 }
 
 .my-modal-body {
-    background-color: azure;
+    background-color: #ffff6e;
     width: 80%;
     max-width: 500px;
-   
+
     padding: 20px;
     margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    
 }
 
 .my-modal-body>div {
@@ -54,7 +52,7 @@
 body {
     display: flex;
     flex-direction: column;
-    
+
     background: #fdfd96;
     /* align-items: center; */
 }
@@ -68,14 +66,16 @@ body {
     border-bottom-right-radius: 0;
     margin-right: 0;
     padding: 5px;
-   
+
 }
-.btn-in-the-middle{
+
+.btn-in-the-middle {
     width: 80%;
     border-radius: 0;
     margin: 0;
     padding: 5px;
 }
+
 .btn-redounder-rihgt {
     width: 10%;
     border-top-right-radius: 100%;
@@ -98,7 +98,7 @@ body {
     flex-direction: column;
 }
 
-.balances-input{
+.balances-input {
     max-width: 100px;
     border-color: rgba(0, 0, 0, 0);
 }
@@ -108,36 +108,63 @@ body {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    background: #fdfd96; /* Color de fondo similar a una libreta */
+    background: #fdfd96;
+    /* Color de fondo similar a una libreta */
     border: 1px solid #ccc;
     padding: 10px;
-    font-family: 'Courier New', Courier, monospace; /* Fuente tipo máquina de escribir */
+    font-family: 'Courier New', Courier, monospace;
+    /* Fuente tipo máquina de escribir */
 }
 
 .notebook-list li {
     padding: 5px 0;
-    border-bottom: 1px dashed #ccc; /* Línea punteada entre elementos */
+    border-bottom: 1px dashed #ccc;
+    /* Línea punteada entre elementos */
 }
 
 .notebook-list li:last-child {
-    border-bottom: none; /* Sin línea en el último elemento */
+    border-bottom: none;
+    /* Sin línea en el último elemento */
 }
 
-.my-table{
+.my-table {
     background: #fdfd96
 }
-.my-table td,.my-table th{
+
+.my-table td,
+.my-table th {
     padding: .5rem .5rem;
 }
-.my-table tr{
+
+.my-table tr {
     border-bottom: 1px dashed #ccc;
 }
-.my-table thead{
+
+.my-table thead {
     background: #ffff6e
 }
 
-input{
+input, textarea {
     border: #00000000;
     background: #fdfd96;
     border: 1px dashed #ccc;
+}
+
+.navegation{
+    background: #ffff6e;
+    display: inline-block;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+    
+}
+.navegation li{
+    float: left;
+    padding: 5px;
+    margin: 5px;
+}
+.navegation a{
+    text-decoration: none;
+    font-size: xx-large;
 }
