@@ -7,12 +7,10 @@ import { useGain } from "../../hooks/useShowGain"
 export function Balances() {
 
     const { balances } = useBalance()
-    const {checkShowGain} = useGain()
 
     return (
         <div>
         <Header/>
-        {checkShowGain}
             <ul className="notebook-list">
                 {balances && balances
                     .sort((a, b) => new Date(b.date) - new Date(a.date)) // Ordenar por fecha

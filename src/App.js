@@ -9,6 +9,7 @@ import { Products } from './products/components/Products';
 import { ProductProvider } from './products/context/ProductProvider';
 import { Balances } from './balances/components/Balances';
 import { BalanceProvider } from './balances/context/BalanceProvider';
+import { Help } from './pages/Help';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
             <Route path="/demo-encaja/product/:productId/" element={<ProductDetail />} />
             <Route path="/demo-encaja/product/balance/" element={<ProductBalance />} />
             <Route path="/demo-encaja/historical_balances/" element={<Balances />} />
+            <Route path="/demo-encaja/help/" element={<Help />} />
           </Routes>
         </Router>
       </BalanceProvider>

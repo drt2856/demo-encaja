@@ -9,8 +9,8 @@ export function CreateProduct() {
     const [product, setProduct] = useState({
         id: "",
         name: "",
-        costPrice: "",
-        salePrice: "",
+        costPrice: 0,
+        salePrice: 0,
         enabled: true,
         visible: true,
     })
@@ -36,19 +36,19 @@ export function CreateProduct() {
     }
 
     return (
-        <div style={{display:"flex",flexDirection:"column",alignItems:"center"}} >
-            <div style={{maxWidth:"500px"}} >
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }} >
+            <div style={{ maxWidth: "500px" }} >
                 <div>
                     <label htmlFor="tilte" className="col-12">Nombre del producto</label>
                     <input type="text" id="name" className="col-10" value={product.name} onChange={handleChange} />
                 </div>
                 <div >
                     <label htmlFor="costPrice" className="col-12">Precio de compra</label>
-                    <input style={{backgroundColor:Number(product.costPrice)>=Number(product.salePrice)?"red":"#fdfd96"}} type="number" id="costPrice" className="col-10" value={product.costPrice} onChange={handleChange} />
+                    <input style={{ backgroundColor: Number(product.costPrice) >= Number(product.salePrice) ? "red" : "#fdfd96" }} type="number" id="costPrice" className="col-10" value={product.costPrice} onChange={handleChange} />
                 </div>
                 <div>
                     <label htmlFor="salePrice" className="col-12">Precio de venta</label>
-                    <input style={{backgroundColor:Number(product.costPrice)>=Number(product.salePrice)?"red":"#fdfd96"}} type="number" id="salePrice" className="col-12" value={product.salePrice} onChange={handleChange} />
+                    <input style={{ backgroundColor: Number(product.costPrice) >= Number(product.salePrice) ? "red" : "#fdfd96" }} type="number" id="salePrice" className="col-12" value={product.salePrice} onChange={handleChange} />
                 </div>
                 <div>
                     <label htmlFor="firstCount" className="col-12">Cuantos hay en inventario</label>

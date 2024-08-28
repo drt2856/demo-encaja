@@ -19,6 +19,9 @@ export function Header() {
                     <li className='nav-item'>
                         <NavLink className='nav-link' to={"/demo-encaja/historical_balances"}>Historial de cierres de caja</NavLink>
                     </li>
+                    <li className='nav-item'>
+                        <NavLink className='nav-link' to={"/demo-encaja/help"}>Ayuda</NavLink>
+                    </li>
                 </ul>
 
             </div>

@@ -1,11 +1,18 @@
+import { useEffect } from "react";
 import { useGain } from "../../hooks/useShowGain";
 import { useBalance } from "../hooks/useBalance";
+import { useState } from "react";
 
 
 export default function Balance({ prevBalance }) {
 
     const { seeShow } = useGain();
     const { deleteBalance } = useBalance()
+    const [statics, setStatics] = useState("")
+
+    useEffect(()=>{
+        setStatics(findStatics(prevBalance.balances))
+    },[])
 
     function findStatics(balances) {
         const sta = { ventas: 0, ganancias: 0 }
@@ -13,7 +20,7 @@ export default function Balance({ prevBalance }) {
             const aux = balances[index]
             sta.ventas = sta.ventas + ((aux.firstCount - aux.secondCount) * aux.salePrice)
             sta.ganancias = sta.ganancias + ((aux.firstCount - aux.secondCount) * (aux.salePrice - aux.costPrice))
-        }
+        } console.log( seeShow(" , y se gano: " + sta.ganancias));
         return "Se vendieron $" + sta.ventas + seeShow(" , y se gano: " + sta.ganancias)
     }
 
@@ -30,7 +37,7 @@ export default function Balance({ prevBalance }) {
                 <p>{prevBalance.cashier}</p>
                 <p>{prevBalance.notes}</p>
                 <p>
-                    {prevBalance.balances && findStatics(prevBalance.balances)}
+                    {statics}
                 </p>
             </div>
                     <button 

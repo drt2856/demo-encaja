@@ -128,7 +128,8 @@ body {
 }
 
 .my-table {
-    background: #fdfd96
+    background: #fdfd96;
+    margin-top: 25px;
 }
 
 .my-table td,
@@ -140,9 +141,7 @@ body {
     border-bottom: 1px dashed #ccc;
 }
 
-.my-table thead {
-    background: #ffff6e
-}
+
 
 input, textarea {
     border: #00000000;
