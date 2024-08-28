@@ -4,6 +4,7 @@ import { useProduct } from "../../products/hooks/useProduct";
 import { NavLink } from "react-router-dom";
 import { CreateBalance } from "./CreateBalance";
 import { useGain } from "../../hooks/useShowGain";
+import { Header } from "../../pages/Header";
 
 export function ProductBalance() {
     const { products } = useProduct()
@@ -64,17 +65,7 @@ export function ProductBalance() {
 
     return (
         <div>
-            <ul className="navegation">
-                <li>
-                    <NavLink to={"/demo-encaja/product"}>Productos</NavLink>
-                </li>
-                <li>
-                    <NavLink to={"/demo-encaja/product/balance/"}>Cierre de caja</NavLink>
-                </li>
-                <li>
-                    <NavLink to={"/demo-encaja/historical_balances"}>Historial de cierres de caja</NavLink>
-                </li>
-            </ul>
+            <Header/>
             <table className="my-table">
                 <caption>Cierre de ventas
                     Obtuviste ${statics.ventas} en ventas {seeShow(" y $"+statics.ganancias+" en ganancia")}

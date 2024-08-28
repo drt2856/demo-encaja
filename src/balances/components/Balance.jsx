@@ -5,6 +5,7 @@ import { useBalance } from "../hooks/useBalance";
 export default function Balance({ prevBalance }) {
 
     const { seeShow } = useGain();
+    const { deleteBalance } = useBalance()
 
     function findStatics(balances) {
         const sta = { ventas: 0, ganancias: 0 }
@@ -18,18 +19,26 @@ export default function Balance({ prevBalance }) {
 
     return (
         <>
-            <p>
-                {new Date(prevBalance.date).toLocaleDateString('es-ES', {
-                    day: '2-digit',
-                    month: '2-digit',
-                    year: 'numeric'
-                })}
-            </p>
-            <p>{prevBalance.cashier}</p>
-            <p>{prevBalance.notes}</p>
-            <p>
-                {prevBalance.balances && findStatics(prevBalance.balances)}
-            </p>
+            <div className="col-10">
+                <p>
+                    {new Date(prevBalance.date).toLocaleDateString('es-ES', {
+                        day: '2-digit',
+                        month: '2-digit',
+                        year: 'numeric'
+                    })}
+                </p>
+                <p>{prevBalance.cashier}</p>
+                <p>{prevBalance.notes}</p>
+                <p>
+                    {prevBalance.balances && findStatics(prevBalance.balances)}
+                </p>
+            </div>
+                    <button 
+                    className="btn btn-danger"
+                    onClick={()=>deleteBalance(prevBalance.id)}
+                    >
+                        delete
+                    </button>
         </>
 
     )
