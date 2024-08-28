@@ -20,11 +20,9 @@ export function useGain() {
         }
     }
 
-    function settingShowGain() {
-        setShowGain(preventState=>{
-            set(!preventState)
-            return(!preventState)
-        })
+    function settingShowGain(event) {
+        set(event.target.checked)
+        setShowGain(event.target.checked)
     }
 
     const checkShowGain = <div>
@@ -33,8 +31,8 @@ export function useGain() {
         style={{width:25, height:25}} 
          type="checkbox" 
          id="ckecked" 
-         value={showGain} 
-         onChange={()=>settingShowGain()} 
+         checked={showGain}
+         onChange={settingShowGain} 
          />
     </div>
 
