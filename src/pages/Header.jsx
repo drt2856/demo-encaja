@@ -22,6 +22,9 @@ export function Header() {
                     <li className='nav-item'>
                         <NavLink className='nav-link' to={"/demo-encaja/help"}>Ayuda</NavLink>
                     </li>
+                    <li className='nav-item'>
+                        <NavLink className='nav-link' to={"/demo-encaja/about"}>Sobre EnCaja</NavLink>
+                    </li>
                 </ul>
 
             </div>

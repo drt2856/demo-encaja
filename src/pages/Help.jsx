@@ -1,7 +1,18 @@
+import { useEffect } from "react";
 import { Header } from "./Header";
+import { useLocation } from "react-router-dom";
 
 export function Help() {
+    const location = useLocation();
 
+    useEffect(() => {
+      if (location.hash) {
+        const element = document.getElementById(location.hash.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }, [location]);
     return (
         <>
             <Header />
@@ -44,7 +55,7 @@ export function Help() {
                     </p>
                 </article>
 
-                <article>
+                <article id="pro">
                     <h2 className="text-danger">Importante</h2>
                     <p>La versión a la cual usted está accediendo es una versión demo de EnCaja, por lo cual cuenta con una serie
                         de desventajas con respecto a la versión PRO que en estos momentos se encuentra en desarrollo. En la versión
@@ -58,6 +69,7 @@ export function Help() {
                         </li>
                         <li>Solución del problema de refrescar la página que presentan algunos dispositivos en esta versión libre</li>
                         <li>Seguridad y respaldo de datos en la nube</li>
+                        <li>Diseño moderno</li>
                         <li>Entre otras sorpresas que no serán reveladas para no ayudar a la competencia :)</li>
                     </ul>
                 </article>
