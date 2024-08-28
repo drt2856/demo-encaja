@@ -20,7 +20,7 @@ export default function Balance({ prevBalance }) {
             const aux = balances[index]
             sta.ventas = sta.ventas + ((aux.firstCount - aux.secondCount) * aux.salePrice)
             sta.ganancias = sta.ganancias + ((aux.firstCount - aux.secondCount) * (aux.salePrice - aux.costPrice))
-        } console.log( seeShow(" , y se gano: " + sta.ganancias));
+        } 
         return "Se vendieron $" + sta.ventas + seeShow(" , y se gano: " + sta.ganancias)
     }
 

@@ -21,6 +21,11 @@ export function ProductDetail() {
     }, [product]);
 
     const handleChange = (event) => {
+        if(event.target.id==="costPrice"||event.target.id==="salePrice"||event.target.id==="firstCount"){
+            if(event.target.value<0){
+                return
+            }
+        }
         const { id, value } = event.target;
         setProduct(prevState => ({ ...prevState, [id]: value }));
     };
