@@ -19,7 +19,7 @@ export default function Product({ prevProduct }) {
         <>
             <div className="row"  >
 
-                <div className="col-11" onClick={() => navigate("/demo-encaja/product/" + product.id)}>
+                <div className="col-11" onClick={() => navigate("/product/" + product.id)}>
                     <h3>{product?.name}.....${product?.salePrice}</h3>
                 </div>
             </div>

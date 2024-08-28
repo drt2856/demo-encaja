@@ -5,7 +5,6 @@ export function About() {
 
     return (
         <>
-            <Header />
 
             <section className="p-3">
     <article>
@@ -17,7 +16,7 @@ export function About() {
             minimalista, imitando a una libreta de notas para una mayor comodidad.
         </p>
         <p>
-            Esta web es una versión demo de EnCaja. Para saber más acerca de esto haga click <Link to={"/demo-encaja/help#pro"}>aquí</Link>. Manténgase en contacto para
+            Esta web es una versión demo de EnCaja. Para saber más acerca de esto haga click <Link to={"/help#pro"}>aquí</Link>. Manténgase en contacto para
             que no se pierda el lanzamiento de la versión PRO.
         </p>
     </article>

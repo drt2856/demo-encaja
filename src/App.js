@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
 import './App.css';
 import { CreateProduct } from './products/components/CreateProduct';
 import { ProductBalance } from './balances/components/ProductBalance';
@@ -11,33 +10,27 @@ import { Balances } from './balances/components/Balances';
 import { BalanceProvider } from './balances/context/BalanceProvider';
 import { Help } from './pages/Help';
 import { About } from './pages/About';
+import { Header } from './pages/Header';
 
 function App() {
-
-
   return (
-
     <ProductProvider>
       <BalanceProvider>
         <Router>
+          <Header/>
           <Routes>
-            <Route path="/demo-encaja/" element={<Products />} />
-            <Route path="/demo-encaja/product/" element={<Products />} />
-            <Route path="/demo-encaja/product/create/" element={<CreateProduct />} />
-            <Route path="/demo-encaja/product/:productId/" element={<ProductDetail />} />
-            <Route path="/demo-encaja/product/balance/" element={<ProductBalance />} />
-            <Route path="/demo-encaja/historical_balances/" element={<Balances />} />
-            <Route path="/demo-encaja/help/" element={<Help />} />
-            <Route path="/demo-encaja/about" element={<About />} />
+            <Route path="/" element={<Products />} />
+            <Route path="/product" element={<Products />} />
+            <Route path="/product/create" element={<CreateProduct />} />
+            <Route path="/product/:productId" element={<ProductDetail />} />
+            <Route path="/product/balance" element={<ProductBalance />} />
+            <Route path="/historical_balances" element={<Balances />} />
+            <Route path="/help" element={<Help />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </Router>
       </BalanceProvider>
-
     </ProductProvider>
-
-
-
-
   );
 }
 

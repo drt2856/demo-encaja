@@ -6,16 +6,15 @@ export function Help() {
     const location = useLocation();
 
     useEffect(() => {
-      if (location.hash) {
-        const element = document.getElementById(location.hash.substring(1));
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+        if (location.hash) {
+            const element = document.getElementById(location.hash.substring(1));
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
         }
-      }
     }, [location]);
     return (
         <>
-            <Header />
             <section className="p-3">
                 <h1>Ayuda</h1>
                 <p>La app cuenta con 3 secciones principales: Productos, Cierre de Caja e Historial de cierres de caja</p>

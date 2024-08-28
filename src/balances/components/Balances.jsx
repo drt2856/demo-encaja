@@ -10,7 +10,6 @@ export function Balances() {
 
     return (
         <div>
-        <Header/>
             <ul className="notebook-list">
                 {balances && balances
                     .sort((a, b) => new Date(b.date) - new Date(a.date)) // Ordenar por fecha

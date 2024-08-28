@@ -11,19 +11,19 @@ export function Header() {
             <div className="collapse navbar-collapse navbar-text " id="navbarSupportedContent">
                 <ul className='navbar-nav ms-auto '>
                     <li className='nav-item'>
-                        <NavLink className='nav-link' to={"/demo-encaja/product"}>Productos</NavLink>
+                        <NavLink className='nav-link' to={"/product"}>Productos</NavLink>
                     </li>
                     <li className='nav-item'>
-                        <NavLink className='nav-link' to={"/demo-encaja/product/balance/"}>Cierre de caja</NavLink>
+                        <NavLink className='nav-link' to={"/product/balance/"}>Cierre de caja</NavLink>
                     </li>
                     <li className='nav-item'>
-                        <NavLink className='nav-link' to={"/demo-encaja/historical_balances"}>Historial de cierres de caja</NavLink>
+                        <NavLink className='nav-link' to={"/historical_balances"}>Historial de cierres de caja</NavLink>
                     </li>
                     <li className='nav-item'>
-                        <NavLink className='nav-link' to={"/demo-encaja/help"}>Ayuda</NavLink>
+                        <NavLink className='nav-link' to={"/help"}>Ayuda</NavLink>
                     </li>
                     <li className='nav-item'>
-                        <NavLink className='nav-link' to={"/demo-encaja/about"}>Sobre EnCaja</NavLink>
+                        <NavLink className='nav-link' to={"/about"}>Sobre EnCaja</NavLink>
                     </li>
                 </ul>
 

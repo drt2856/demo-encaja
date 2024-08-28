@@ -39,7 +39,7 @@ export function CreateBalance({ balances, setShowModal }) {
         createBalance(newBalance)
         setProducts(productsCopy)
         setShowModal("none")
-        navigate("/demo-encaja/historical_balances/")
+        navigate("/historical_balances/")
         alert("Cierre de caja realizado con exito")
     }
 

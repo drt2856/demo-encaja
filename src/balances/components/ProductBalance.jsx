@@ -65,7 +65,6 @@ export function ProductBalance() {
 
     return (
         <div>
-            <Header/>
             <table className="my-table">
                 <caption>Cierre de ventas
                     Obtuviste ${statics.ventas} en ventas {seeShow(" y $"+statics.ganancias+" en ganancia")}

@@ -45,7 +45,7 @@ export function ProductDetail() {
                     <input type="number" id="firstCount" className="col-12" value={product.firstCount} onChange={handleChange} />
                 </div>
                 <div>
-                    <button className="btn btn-secondary mx-3" onClick={() => navigate("/demo-encaja/product/")} >
+                    <button className="btn btn-secondary mx-3" onClick={() => navigate("/product/")} >
                         <i className="material-symbols-outlined">arrow_back</i>
                     </button>
                     <button className="btn btn-danger mx-3" onClick={() => setShowModal("DELETE")}>

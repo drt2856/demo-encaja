@@ -32,7 +32,7 @@ export function CreateProduct() {
     function handleSubmit(event) {
         event.preventDefault();
         createProduct(product)
-        navigate("/demo-encaja/product/")
+        navigate("/product/")
     }
 
     return (
@@ -55,7 +55,7 @@ export function CreateProduct() {
                     <input type="number" id="firstCount" className="col-12" value={product.firstCount} onChange={handleChange} />
                 </div>
                 <div>
-                    <button className="btn btn-secondary mx-3" onClick={() => navigate("/demo-encaja/product/")} >
+                    <button className="btn btn-secondary mx-3" onClick={() => navigate("/product/")} >
                         <i className="material-symbols-outlined">
                             arrow_back
                         </i>

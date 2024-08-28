@@ -9,7 +9,7 @@ export default function DeleteProduct({ setShowModal, productId }) {
 
     function deleteG(event) {
         deleteProduct(productId)
-        navigate("/demo-encaja/product/")
+        navigate("/product/")
     }
 
 
