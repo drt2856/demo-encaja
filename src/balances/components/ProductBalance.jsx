@@ -76,7 +76,7 @@ export function ProductBalance() {
                             Producto
                         </th>
                         <th>
-                            Cuantos habia
+                            Cuantos había
                         </th>
                         <th>
                             Cuantos hay
